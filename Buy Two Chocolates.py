@@ -10,7 +10,7 @@ Return the amount of money you will have leftover after buying the two chocolate
 
 
 class Solution(object):
-    def buyChoco(self,prices,money)
+    def buyChoco(self,prices,money):
         ans=money-sum(sorted(prices)[:2])
         if ans>=0:
             return ans
