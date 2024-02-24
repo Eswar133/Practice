@@ -1,5 +1,6 @@
 #Sorting Algorithm:Bubble sort:
 #Bubble sort is a type of technique used to swap adjacent items but comparing in the process of comparing the small items"bubbles" are at the top of the list means start of the list that's why it is called bubble sort.
+#O (n^2) run time complexity
 
 
 arr =[5,2,3,9,1,2]

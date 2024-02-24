@@ -21,18 +21,14 @@ Output: true
 
 class Solution(object):
     def isValid(self,s):
-        stack = []
-        bracket_pairs = {')': '(', '}': '{', ']': '['}
-
-        for char in s:
-            if char in bracket_pairs.values():
-                stack.append(char)
-            elif char in bracket_pairs.keys():
-                if not stack or stack.pop() != bracket_pairs[char]:
-                    return False
-            else:
-                
+        list1=[]
+        for i in s:
+            if i == '[':
+                list1.append(']')
+            elif i == '{':
+                list1.append('}')
+            elif i == '(':
+                list1.append(')')
+            elif len(list1) == 0 or list1.pop() != i:
                 return False
-
-        
-        return len(stack) == 0
+        return len(list1)==0
