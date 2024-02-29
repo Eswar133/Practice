@@ -14,4 +14,3 @@ for i in range(n):
     result.append(num)
 sorted_arr=insertion_sort(result)
 print(sorted_arr)
-    
