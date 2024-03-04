@@ -11,13 +11,14 @@ You must solve this problem without using the library's sort function.
 
 class solution(object):
     def sortColors(self,nums):
-        red,white,blue=0,0,len(nums)-1
-        if nums[white]==0:
-            nums[red],nums[white]=nums[white],nums[red]
-            red+=1
-            white+=1
-        elif nums[white]==1:
-            white+=1
-        else:
-            nums[white],nums[blue]=nums[blue],nums[white]
-            blue-=1
+        curr,left,right=0,0,len(nums)-1
+        while curr <= right:
+            if nums[curr] == 0:
+                nums[curr],nums[left] = nums[left],nums[curr]
+                curr+=1
+                left+=1
+            elif nums[curr] ==2:
+                nums[curr],nums[right] = nums [right],nums[curr]
+                right-=1
+            else:
+                curr+=1
