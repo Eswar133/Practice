@@ -27,6 +27,7 @@ Constraints:
 nums is a non-decreasing array.
 -109 <= target <= 109
 '''
+#BruteForce
 class Solution(object):
     def searchRange(self, nums, target):
         result=[]
