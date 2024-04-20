@@ -1,7 +1,9 @@
+from collections import Counter
 #https://leetcode.com/problems/top-k-frequent-elements/
 """
+347 . Top K Frequent Elements
 
- Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
  
 
@@ -18,30 +20,8 @@ Output: [1]
 
 class Solution(object):
     def topKFrequent(self,nums, k):
-    
-        frequency = {}
-    
-
-        for num in nums:
-            frequency[num] = frequency.get(num, 0) + 1
-    
-        result = []
-    
-    
-        for _ in range(k):
+        freq = Counter(nums)
+        sortednums = sorted(freq.keys(),key = lambda num:-freq[num])
+        return sortednums[:k]
         
-            max_freq_element = None
-            max_freq = -1
-            for num, freq in frequency.items():
-                if freq > max_freq:
-                    max_freq = freq
-                    max_freq_element = num
-        
-        
-            result.append(max_freq_element)
-        
-        
-            del frequency[max_freq_element]
     
-    
-        return result
