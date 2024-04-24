@@ -14,5 +14,10 @@ Explanation: "amanaplanacanalpanama" is a palindrome.
 """
 class solution(object):
     def isPalindrome(self,s):
-        s=''.join(filter(str.isalnum,str(s).lower()))
-        return s==s[::-1]
+        clean_string= re.sub(r'[^a-zA-Z0-9]','',s)
+        clean_string=clean_string.lower()
+        n = len(clean_string)
+        for i in range(n//2):
+            if clean_string[i] != clean_string[n-1-i]:
+                return False 
+        return True
